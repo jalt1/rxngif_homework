@@ -33,7 +33,9 @@ class PicturesController < ApplicationController
 
   def update
     @update_pic = Picture.find(params[:id])
-
+    @update_pic.source = params[:source]
+    @update_pic.caption = params[:caption]
+    @update_pic.save
   end
 
 end

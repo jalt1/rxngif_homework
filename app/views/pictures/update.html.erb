@@ -1,15 +1,3 @@
-<h1>Update A Picture</h1>
+<p>Thank you!</p>
 
-<form action="http://localhost:3000/create_picture/<%= params[:id] %>">
-  <div>
-    <label for="the_caption">Caption:</label>
-    <input id="the_caption" type="text" name="caption" value="<%=@edit_pic.caption %>">
-  </div>
-  <div>
-    <label for="image_url">Image URL:</label>
-    <input id="image_url" type="text" name="source" value="<%=@edit_pic.source %>">
-  </div>
-  <div>
-    <input type="submit" value="Edit Picture">
-  </div>
-</form>
+<p>Your picture with ID <%= @update_pic[:id] %> has been updated.</p>
