@@ -23,4 +23,12 @@ class PicturesController < ApplicationController
     @new_picture.save
   end
 
+  def destroy
+    @destroy_this_pic = Picture.find(params[:id])
+  end
+
+  def edit
+    @edit_pic = Picture.find(params[:id])
+
+  end
 end
