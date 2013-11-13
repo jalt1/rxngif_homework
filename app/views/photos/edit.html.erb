@@ -1,0 +1,17 @@
+<h1>Editing Photo #<%= @photo.id %></h1>
+
+<%= form_tag(photo_url(@photo), method: 'patch') do %>
+  <div>
+    <%= label_tag :source %><br />
+    <%= text_field_tag :source, @photo.source %>
+  </div>
+
+  <div>
+    <%= label_tag :caption %><br />
+    <%= text_field_tag :caption, @photo.caption %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Photo" %>
+  </div>
+<% end %>

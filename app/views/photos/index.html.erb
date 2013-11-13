@@ -1,0 +1,28 @@
+<h1>Photos</h1>
+
+<p><%= link_to 'Add a New Photo', new_photo_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Caption</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @photos.each do |photo| %>
+    <tr>
+      <td><%= photo.source %></td>
+      <td><%= photo.caption %></td>
+      <td><%= link_to 'Show', photo_url(photo) %></td>
+      <td><%= link_to 'Edit', edit_photo_url(photo) %></td>
+      <td><%= link_to 'Destroy', photo_url(photo), method: 'delete', data: { confirm: "Do you really want to delete this photo?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

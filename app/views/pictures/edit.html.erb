@@ -1,12 +1,12 @@
 <h1>Edit A Picture</h1>
 
-<%= form_tag("http://localhost:3000/update_picture/#{params[:id]}", :method => "patch") do %>
+<%= form_tag(picture_url(params[:id]), :method => "patch") do %>
 
     <%= label_tag(:caption, "Caption:") %>
-    <%= text_field_tag(:caption, #{@edit_pic.caption})%>
+    <%= text_field_tag(:caption, @edit_pic.caption)%>
 
     <%= label_tag(:source, "Image URL:") %>
-    <%= text_field_tag(:source, #{@edit_pic.source}) %>
+    <%= text_field_tag(:source, @edit_pic.source) %>
 
     <%= submit_tag("Edit Picture") %>
 
