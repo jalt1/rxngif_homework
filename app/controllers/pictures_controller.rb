@@ -21,10 +21,14 @@ class PicturesController < ApplicationController
     @new_picture.source = params[:source]
     @new_picture.caption = params[:caption]
     @new_picture.save
+
+    redirect_to "http://localhost:3000/all_pictures", :notice => "Your picture with ID #{@new_picture[:id]} has been created."
   end
 
   def destroy
     @destroy_this_pic = Picture.find(params[:id])
+
+    redirect_to "http://localhost:3000/all_pictures", :notice => "Your picture has been destroyed."
   end
 
   def edit
@@ -36,6 +40,8 @@ class PicturesController < ApplicationController
     @update_pic.source = params[:source]
     @update_pic.caption = params[:caption]
     @update_pic.save
+
+    redirect_to "http://localhost:3000/picture_details/#{params[:id]}", :notice => "Your picture with ID #{@update_pic[:id]} has been updated."
   end
 
 end
